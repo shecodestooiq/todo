@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  min-width: 250px;
+}
+.container > h1{
+  font-size: 50px;
+  color: rgb(61, 59, 59);
+  font-style: italic;
+}
+form{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5px;
+}
+form span{
+  background-color: rgba(212, 206, 206, 0.318);
+  border: none;
+  border-radius: 2px;
+  padding: 4px 12px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+}
+form input{
+  border: none;
+  padding: 6px 20px;
+  background-color: rgba(212, 206, 206, 0.318);
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+ul{
+  text-align: left;
+  background-color: rgba(129, 128, 128, 0.433);
+  border-radius: 5px;
+  width: 50%;
+}
+ul li {
+  list-style-type: none;
+  padding: 20px 20px;
+ position: relative;
+ cursor: pointer;
+}
+ul li::before{
+    content: '';
+    position: absolute;
+    background-image: url(unchecked.png);
+    width: 20px;
+    height: 20px;
+    left:-20px;
+    background-position: center;
+    background-size: cover;
+}
+
+ul li.checked {
+ text-decoration: line-through;
+}
+
+ul li.checked::before {
+  content: '';
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: -20px;
+  background-image: url(check.png);
+  background-position: center;
+    background-size: cover;
+
+}
