@@ -1,0 +1,92 @@
+body {
+    background-color: antiquewhite;
+    font-family: 'Permanent Marker', cursive;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+form {
+    display: flex;
+}
+
+input {
+    border: 0;
+    background: none;
+    width: 100%;
+}
+
+input[type=text] {
+    border-bottom: 3px;
+    border-style: dashed;
+    border-bottom-color: black;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    color: rgba(0, 0, 0, 0.769);
+    font-family: 'Permanent Marker', cursive;
+}
+
+input[type=text]:focus {
+    outline: none;
+    color: rgba(0, 0, 0, 0.769);
+    font-family: 'Permanent Marker', cursive;
+
+}
+
+li {
+    display: flex;
+    border-bottom: 3px;
+    border-style: groove;
+    border-bottom-color: black;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.737);
+    font-size: large;
+
+
+}
+
+.todo-checkbox:checked+.checked-label {
+    text-decoration: line-through
+}
+
+input[type=checkbox] {
+    margin: 1rem;
+    background-color: blue;
+    accent-color: green;
+    width: 30px;
+    height: 30px;
+    border: 3px solid rgb(189, 18, 18);
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+    font-family: 'Permanent Marker', cursive;
+    color: rgb(19, 143, 101);
+    font-size: larger;
+}
+
+::placeholder {
+    font-family: 'Permanent Marker', cursive;
+}
+
+h1 {
+    display: flex;
+    border-bottom: 3px;
+    border-style: groove;
+    border-bottom-color: black;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.765);
+}
+
+#sig {
+    position: relative;
+   bottom: 0;
+   float: right;
+}
