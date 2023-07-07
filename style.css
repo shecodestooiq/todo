@@ -1,0 +1,15 @@
+body{
+    margin-top: 70px !important;
+    margin-left: 40% !important;
+}
+label{
+    margin: 5px;
+}
+.inputStyle{
+    margin-top: 20px;
+    width: 30%;
+}
+li{
+    display: inline;
+    padding: 10px;
+}
