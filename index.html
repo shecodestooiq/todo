@@ -1,19 +1,43 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Todo List</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
   <div class="container">
     <h1>Todo List</h1>
-    <form id="todoForm">
+    <form method="get" id="todoForm" onsubmit="newElemet()">
       <input type="text" id="todoInput" placeholder="Enter a task">
       <button type="submit">Add</button>
     </form>
-    <ul id="todoList"></ul>
+    <ul id="todo_list">
+      <li>
+        <input class="checkmark" type="checkbox" name="todoItem" id="1">
+        <label id="item1"></label>
+      </li>
+      <li>
+        <input class="checkmark" type="checkbox" name="todoItem" id="2">
+        <label id="item2"></label>
+      </li>
+      <li>
+        <input class="checkmark" type="checkbox" name="todoItem" id="3">
+        <label id="item3"></label>
+      </li>
+      <li>
+        <input class="checkmark" type="checkbox" name="todoItem" id="4">
+        <label id="item4"></label>
+      </li>
+      <li>
+        <input class="checkmark" type="checkbox" name="todoItem" id="5">
+        <label id="item5"></label>
+      </li>
+    </ul>
   </div>
 
   <script src="script.js"></script>
 </body>
+
 </html>

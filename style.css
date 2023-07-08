@@ -1,0 +1,91 @@
+.container{
+    margin: auto;
+    padding: 25px;
+    width: 40%;
+    text-align: center;
+    height: 90vh;
+    background-color: rgb(219, 246, 246);
+    border-radius: 10px;
+    align-items: center;
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+}
+.container #todoInput{
+    width: 70%;
+    height: 40px;
+    border: none;
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 8px;
+    box-shadow: 1px 1px 3px #ccc;
+    font-size: 20px;
+}
+.container button{
+    width: 20%;
+    height: 60px;
+    border:1px solid #4b48482a;
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: #545353;
+    background-color: blanchedalmond;
+    border-radius: 8px;
+    box-shadow: 1px 1px 3px #ccc;
+    font-size: 20px;
+}
+ul {
+    margin-top: 30px;
+    padding: 0;
+  }
+  
+  /* Style the list items */
+  ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    list-style-type: none;
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
+  }
+  
+  /* Set all odd list items to a different color (zebra-stripes) */
+  ul li:nth-child(odd) {
+    background: #f9f9f9;
+  }
+  
+  /* Darker background-color on hover */
+  ul li:hover {
+    background: #ddd;
+  }
+  
+  /* When clicked on, add a background color and strike out text */
+  ul li.checked {
+    background: #888;
+    color: #fff;
+    text-decoration: line-through;
+  }
+  
+  /* Add a "checked" mark when clicked on */
+  ul li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+  }
+  
+  .checkmark {
+    display: none;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+  }
