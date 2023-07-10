@@ -31,3 +31,48 @@ function addItem() {
     }
   }
   
+
+  function saveState() {
+    var elements = document.getElementsByTagName("label");
+    var state = {};
+
+    for (var i = 0; i < elements.length; i++) {
+      var element = elements[i];
+      var id = element.id;
+      var value = element.value;
+
+      // Save relevant attributes based on the element type
+      if (element.type === "checkbox") {
+        state[id] = element.checked;
+      } else {
+        state[id] = value;
+      }
+    }
+
+    localStorage.setItem("pageState", JSON.stringify(state));
+    alert("To do list saved successfully!");
+  }
+
+  // Reload the state of the HTML page
+  function reloadState() {
+    var state = localStorage.getItem("pageState");
+
+    if (state) {
+      state = JSON.parse(state);
+
+      for (var id in state) {
+        var element = document.getElementById(id);
+        var value = state[id];
+
+        // Set values and attributes based on the element type
+        if (element.type === "checkbox") {
+          element.checked = value;
+        } else {
+          element.value = value;
+        }
+      }
+    }
+  }
+
+  // Call reloadState() when the page loads
+  // window.onload = reloadState;
