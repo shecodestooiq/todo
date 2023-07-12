@@ -75,4 +75,4 @@ function addItem() {
   }
 
   // Call reloadState() when the page loads
-  // window.onload = reloadState;
+  window.onload = reloadState;
