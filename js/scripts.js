@@ -31,48 +31,41 @@ function addItem() {
     }
   }
   
+ // Function to save the state
+ function saveState() {
+  var todos = [];
+  var todoItems = document.querySelectorAll("#todoList li");
 
-  function saveState() {
-    var elements = document.getElementsByTagName("label");
-    var state = {};
-
-    for (var i = 0; i < elements.length; i++) {
-      var element = elements[i];
-      var id = element.id;
-      var value = element.value;
-
-      // Save relevant attributes based on the element type
-      if (element.type === "checkbox") {
-        state[id] = element.checked;
-      } else {
-        state[id] = value;
-      }
-    }
-
-    localStorage.setItem("pageState", JSON.stringify(state));
-    alert("To do list saved successfully!");
+  // Iterate over the todo items and store their text content
+  for (var i = 0; i < todoItems.length; i++) {
+    todos.push(todoItems[i].textContent);
   }
 
-  // Reload the state of the HTML page
-  function reloadState() {
-    var state = localStorage.getItem("pageState");
+  // Save the state in local storage
+  localStorage.setItem("savedTodos", JSON.stringify(todos));
+  alert("State saved successfully!");
+}
 
-    if (state) {
-      state = JSON.parse(state);
+// Function to load the saved state
+function loadState() {
+  var savedTodos = localStorage.getItem("savedTodos");
 
-      for (var id in state) {
-        var element = document.getElementById(id);
-        var value = state[id];
+  if (savedTodos) {
+    var todos = JSON.parse(savedTodos);
 
-        // Set values and attributes based on the element type
-        if (element.type === "checkbox") {
-          element.checked = value;
-        } else {
-          element.value = value;
-        }
-      }
+    // Create and append list items for each saved todo
+    var todoList = document.getElementById("todoList");
+    for (var i = 0; i < todos.length; i++) {
+      var listItem = document.createElement("li");
+      listItem.textContent = todos[i];
+      todoList.appendChild(listItem);
     }
-  }
 
-  // Call reloadState() when the page loads
-  window.onload = reloadState;
+    alert("State loaded successfully!");
+  } else {
+    alert("No saved state found.");
+  }
+}
+
+// Call the loadState function when the page loads
+window.onload = loadState;
